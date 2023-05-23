@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2 python train_128_mel.py --checkpoint_path log/cusent_vctk_lr_1e-6 --input_training_file train_files/cusent_vctk_train.txt --input_validation_file train_files/cusent_vctk_test.txt --checkpoint_interval 10000

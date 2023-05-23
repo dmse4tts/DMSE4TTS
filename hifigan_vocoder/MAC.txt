@@ -1,0 +1,251 @@
+LSTM
+layers * timesteps * 8 * 2 * hiddenSize * minibatch * (hiddenSize + 1)
+2*1*8*2*1024*1*1024=33M
+
+CNN
+cin*kw*Kh*Cout*W*H
+
+
+vocoder input size: torch.Size([1, 80, 407])
+output conv_pre torch.Size([1, 512, 407])
+upsample layer 0 torch.Size([1, 256, 3256])
+upsample layer 0 <bound method Module.parameters of ConvTranspose1d(512, 256, kernel_size=(16,), stride=(8,), padding=(4,))>
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+layer 0 torch.Size([1, 256, 3256])
+layer 0 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(3,), dilation=(3,))
+    (2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(5,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    (2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+)>
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+layer 1 torch.Size([1, 256, 3256])
+layer 1 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(9,), dilation=(3,))
+    (2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(15,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,))
+    (2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,))
+  )
+)>
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+within resblock torch.Size([1, 256, 3256])
+layer 2 torch.Size([1, 256, 3256])
+layer 2 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(15,), dilation=(3,))
+    (2): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(25,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(5,))
+    (2): Conv1d(256, 256, kernel_size=(11,), stride=(1,), padding=(5,))
+  )
+)>
+upsample layer 1 torch.Size([1, 128, 26048])
+upsample layer 1 <bound method Module.parameters of ConvTranspose1d(256, 128, kernel_size=(16,), stride=(8,), padding=(4,))>
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+layer 0 torch.Size([1, 128, 26048])
+layer 0 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(3,), dilation=(3,))
+    (2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(5,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,))
+    (2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+)>
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+layer 1 torch.Size([1, 128, 26048])
+layer 1 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(9,), dilation=(3,))
+    (2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(15,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,))
+    (2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,))
+  )
+)>
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+within resblock torch.Size([1, 128, 26048])
+layer 2 torch.Size([1, 128, 26048])
+layer 2 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(15,), dilation=(3,))
+    (2): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(25,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(5,))
+    (2): Conv1d(128, 128, kernel_size=(11,), stride=(1,), padding=(5,))
+  )
+)>
+upsample layer 2 torch.Size([1, 64, 52096])
+upsample layer 2 <bound method Module.parameters of ConvTranspose1d(128, 64, kernel_size=(4,), stride=(2,), padding=(1,))>
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+layer 0 torch.Size([1, 64, 52096])
+layer 0 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(3,), dilation=(3,))
+    (2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(5,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,))
+    (2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+)>
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+layer 1 torch.Size([1, 64, 52096])
+layer 1 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(9,), dilation=(3,))
+    (2): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(15,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,))
+    (2): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,))
+  )
+)>
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+within resblock torch.Size([1, 64, 52096])
+layer 2 torch.Size([1, 64, 52096])
+layer 2 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(15,), dilation=(3,))
+    (2): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(25,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(5,))
+    (2): Conv1d(64, 64, kernel_size=(11,), stride=(1,), padding=(5,))
+  )
+)>
+upsample layer 3 torch.Size([1, 32, 104192])
+upsample layer 3 <bound method Module.parameters of ConvTranspose1d(64, 32, kernel_size=(4,), stride=(2,), padding=(1,))>
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+layer 0 torch.Size([1, 32, 104192])
+layer 0 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(3,), dilation=(3,))
+    (2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(5,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+    (2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+)>
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+layer 1 torch.Size([1, 32, 104192])
+layer 1 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(9,), dilation=(3,))
+    (2): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(15,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(3,))
+    (1): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(3,))
+    (2): Conv1d(32, 32, kernel_size=(7,), stride=(1,), padding=(3,))
+  )
+)>
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+within resblock torch.Size([1, 32, 104192])
+layer 2 torch.Size([1, 32, 104192])
+layer 2 <bound method Module.parameters of ResBlock1(
+  (convs1): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(15,), dilation=(3,))
+    (2): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(25,), dilation=(5,))
+  )
+  (convs2): ModuleList(
+    (0): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(5,))
+    (1): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(5,))
+    (2): Conv1d(32, 32, kernel_size=(11,), stride=(1,), padding=(5,))
+  )
+)>
+conv_post torch.Size([1, 1, 104192])
+<bound method Module.parameters of Conv1d(32, 1, kernel_size=(7,), stride=(1,), padding=(3,))>
+
+
+

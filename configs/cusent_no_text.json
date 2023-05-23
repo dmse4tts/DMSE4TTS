@@ -1,0 +1,59 @@
+{
+    "dataset": "CUSENT_NO_TEXT",
+    "path": {
+        "clean_flist": "train_files/cusent_train.txt",
+        "noise_flist": "train_files/noise_train.txt",
+        "rir_flist": "train_files/rir_train.txt",
+        "textgrid_path": "/data/anonymous/datasets/aligned_cusent_denoiser",
+        "dataset_file_path": "train_files/cusent_train_dataset.txt",
+        "dataset_paired_file_path": "train_files/cusent_test_dataset_paired.txt",
+        "avg_mel_path": "train_files/mels_avg_cusent.txt"
+    },
+    "preprocessing":{
+        "audio":{
+            "sampling_rate": 22050,
+            "max_wav_value": 32768.0
+        },
+        "stft":{
+            "filter_length": 1024,
+            "hop_length": 256,
+            "win_length": 1024,
+            "n_fft": 1024
+        },
+        "mel":{
+            "n_mel_channels": 128,
+            "mel_fmin": 0,
+            "mel_fmax": 8000
+        }
+        },
+    "augmentation": {
+        "reverb":{"prob": 0.8, "wet_level": [0.2, 0.5]},
+        "noise":{"prob": 0.8, "snr": [10, 15, 20, 30]},
+        "clipping":{
+            "prob": 0.4,
+            "max_thresh_perc": [0.6, 0.9]
+        },
+        "lowpass":{
+            "prob": 0.4,
+            "low_pass_range": [4000, 7900],
+            "filter_order_range": [2, 8],
+            "filter_type": ["cheby1", "ellip", "bessel", "butter"]
+        }
+    },
+    "training":{
+        "log_dir": "logs/cusent_no_text",
+        "n_epochs": 2000,
+        "save_every": 50,
+        "learning_rate": 1e-4,
+        "batch_size": 32,
+        "out_size": 2,
+        "random_seed": 412
+    },
+    "model":{
+        "dec_dim": 64,
+        "beta_min": 0.05,
+        "beta_max": 20,
+        "pe_scale": 1000,
+        "use_text": 0
+    }
+}
