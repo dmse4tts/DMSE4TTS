@@ -4,7 +4,7 @@
     <img src="figs/system_design.png" width="500"/>
 </p>
 
-Implementation of the DMSE model in "Diffusion-Based Mel-Spectrogram Enhancement for Text-to-Speech Synthesis with Found Data".
+Implementation of the DMSE model in "Diffusion-Based Mel-Spectrogram Enhancement for Personalized Speech Synthesis with Found Data".
 
 
 **Demo page** : [link]( https://dmse4tts.github.io/)
