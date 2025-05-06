@@ -20,7 +20,7 @@ pip install -r requirements.txt
 The code is tested on Python==3.9.16
 
 ## Inference
-You can download the pretrained DMSEtext, DMSEbase and DMSEbase(VCTK) checkpoints [here](https://drive.google.com/file/d/1hAULNjph1y9q_ph0SU7jzi0Bf-_ja7rY/view?usp=sharing). Then put them in logs/cusent, logs/cusent_no_text and logs/vctk_no_text, respectively.
+You can download the pretrained DMSEtext, DMSEbase and DMSEbase(VCTK) checkpoints [here](https://drive.google.com/drive/folders/1rDk-eD3zAbBBQ2tnpWxsGrMhcLIO5djr?usp=sharing). Then put them in logs/cusent, logs/cusent_no_text and logs/vctk_no_text, respectively.
 
 **w/o text transcription**:
 If your audio clips for testing have no text transcriptions, you can use the DMSEbase or DMSEbase(VCTK) models for enhancement. See inference_no_text.sh as an example. Check out the folder `out` for enhanced output.
